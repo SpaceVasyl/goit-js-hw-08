@@ -15,6 +15,7 @@
   "author": "Smutko Vasyl <curare16071969@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@vimeo/player": "^2.18.0",
     "modern-normalize": "^1.1.0",
     "simplelightbox": "^2.11.0"
   },
