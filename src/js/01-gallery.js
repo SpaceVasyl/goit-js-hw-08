@@ -4,7 +4,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import SimpleLightbox from "simplelightbox";
 // Change code below this line
 const galleryPhoto = document.querySelector(".gallery");
-const items = galleryItems;
+// const items = galleryItems;
 
 function createGalleryItems(items) {
     return items.map((item) => `<a class="gallery__item" href="${item.original}">
