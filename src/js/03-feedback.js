@@ -1,8 +1,13 @@
 // import throttle from "lodash.throttle";
 
 const form = document.querySelector(".feedback-form");
+const savedSettings = localStorage.getItem("feedback-form-state");
+const parsedSettings = JSON.parse(savedSettings);
 
-
+if (localStorage.length != 0) {
+  form.email.value = parsedSettings.email;
+  form.message.value = parsedSettings.message;
+}
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
@@ -10,7 +15,7 @@ function handleSubmit(event) {
   const {
     elements: { email, message }
   } = event.currentTarget;
-
+  
   if (email.value === "" || message.value === "") {
     return console.log("Please fill in all the fields!");
   }
