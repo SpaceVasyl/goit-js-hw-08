@@ -8,6 +8,17 @@ if (localStorage.length != 1) {
   form.email.value = parsedSettings.email;
   form.message.value = parsedSettings.message;
 }
+
+form.addEventListener("input", printInput);
+function printInput(event) {
+  event.preventDefault();
+  const {
+    elements: { email, message }
+  } = event.currentTarget;
+  localStorage.setItem("feedback-form-state", JSON.stringify({email: email.value, message: message.value}))
+}
+
+
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
@@ -15,11 +26,9 @@ function handleSubmit(event) {
   const {
     elements: { email, message }
   } = event.currentTarget;
-  
   if (email.value === "" || message.value === "") {
     return console.log("Please fill in all the fields!");
   }
-  localStorage.setItem("feedback-form-state", JSON.stringify({email: email.value, message: message.value}))
   console.log({email: email.value, message: message.value});
   event.currentTarget.reset();
   localStorage.removeItem("feedback-form-state");
