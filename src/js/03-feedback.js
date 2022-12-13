@@ -8,4 +8,4 @@ function handleInput(event) {
     const {
     elements: { email, message }
   } = event.currentTarget;
-}h
+}
