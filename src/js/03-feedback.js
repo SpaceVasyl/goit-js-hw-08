@@ -2,6 +2,7 @@
 
 const form = document.querySelector(".feedback-form");
 
+
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
