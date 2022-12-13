@@ -18,7 +18,6 @@ function printInput(event) {
   localStorage.setItem("feedback-form-state", JSON.stringify({email: email.value, message: message.value}))
 }
 
-
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
