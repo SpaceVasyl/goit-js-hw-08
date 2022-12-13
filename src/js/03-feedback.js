@@ -7,6 +7,8 @@ const parsedSettings = JSON.parse(savedSettings);
 if (localStorage.length != 0) {
   form.email.value = parsedSettings.email;
   form.message.value = parsedSettings.message;
+} else {
+  console.log("Please fill in all the fields!");
 }
 form.addEventListener("submit", handleSubmit);
 
@@ -22,5 +24,6 @@ function handleSubmit(event) {
   localStorage.setItem("feedback-form-state", JSON.stringify({email: email.value, message: message.value}))
   console.log({email: email.value, message: message.value});
   event.currentTarget.reset();
+  
 }
 
