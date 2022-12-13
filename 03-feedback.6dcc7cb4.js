@@ -1,0 +1,2 @@
+document.querySelector(".feedback-form").addEventListener("submit",(function(e){e.preventDefault();const{elements:{email:l,message:a}}=e.currentTarget;if(""===l.value||""===a.value)return console.log("Please fill in all the fields!");localStorage.setItem("feedback-form-state",JSON.stringify({email:l.value,message:a.value})),console.log({email:l.value,message:a.value}),e.currentTarget.reset()}));
+//# sourceMappingURL=03-feedback.6dcc7cb4.js.map
