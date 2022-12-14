@@ -18,8 +18,7 @@ form.addEventListener("input", function printInput(event) {
 });
 
 
-form.addEventListener("submit", handleSubmit);
-function handleSubmit(event) {
+form.addEventListener("submit", function handleSubmit(event) {
   event.preventDefault();
   const {
     elements: { email, message }
@@ -30,5 +29,6 @@ function handleSubmit(event) {
   console.log({email: email.value, message: message.value});
   event.currentTarget.reset();
   localStorage.removeItem("feedback-form-state");
-}
+});
+
 
